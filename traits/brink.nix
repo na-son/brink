@@ -1,22 +1,22 @@
 { config, pkgs, ... }:
 
 {
- 
+
 
   environment.systemPackages = with pkgs; [
     pixiecore
   ];
 
   networking = {
-    hostName = "brim";
-    firewall = { 
+    hostName = "brink";
+    firewall = {
       allowedTCPPorts = [ 22 ];
       allowedUDPPorts = [ ];
     };
   };
 
-  
-  
+
+
   services = {
     pixiecore = {
       enable = true;
@@ -32,7 +32,7 @@
        vim
      ];
   };
-  
+
   system.stateVersion = "23.05";
 }
 
