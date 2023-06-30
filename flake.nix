@@ -62,6 +62,20 @@
       #  format = "vmware";
       #};
     };
-  };
+
+    nixosConfigurations = {
+      mini = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = with self.nixosModules; [
+        { config = { nix.registry.nixpkgs.flake = nixpkgs; }; }
+        traits/base.nix
+        traits/brink.nix
+        platforms/nuc.nix
+       ];
+     };
+   };
+
+}
+;
 }
 
