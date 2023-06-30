@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot = { 
+  boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -26,12 +26,12 @@
     fstrim.enable = true;
   };
 
-  security.usdo.extraConfig = ''
+  security.sudo.extraConfig = ''
     Defaults lecture="never"
   '';
 
   users.mutableUsers = false;
-  
+
   system.stateVersion = "23.05";
 }
 
